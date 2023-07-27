@@ -4,6 +4,7 @@
   "description": "WoT mod updater",
   "main": "build/index.js",
   "scripts": {
+    "build": "npm install",
     "start": "tsc && node ."
   },
   "author": "Auxority",

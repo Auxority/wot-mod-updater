@@ -1,6 +1,6 @@
 # WoT Mod Updater
 
-Updates any mod of your liking automagically.
+Updates any mod of your liking from [wgmods](https://wgmods.net/) automagically.
 
 ## Usage
 

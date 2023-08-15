@@ -124,8 +124,8 @@ class ModUpdater {
 
     public async downloadMod(modVersion?: string): Promise<void> {
         const modInfo = await this.getModInfo();
-
         const downloadedModVersion = modVersion ? modInfo.versions.find(v => v.version === modVersion) : modInfo.versions[0];
+
         if (!downloadedModVersion) {
             throw new Error(`Could not find version ${modVersion}`);
         }
@@ -137,6 +137,8 @@ class ModUpdater {
 
         const destination = this.getDownloadPath(downloadedModVersion.game_version, modInfo.id, downloadedModVersion.version);
         const stream = fs.createWriteStream(destination);
+
+        console.log(`Downloading mod to: ${destination}`);
 
         // @ts-ignore
         await finished(Readable.fromWeb(body).pipe(stream));
